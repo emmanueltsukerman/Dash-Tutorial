@@ -61,7 +61,7 @@ def load_MNIST_model(model_path = "MNIST_model"):
     model.compile(loss=keras.losses.categorical_crossentropy,
                 optimizer=keras.optimizers.Adadelta(),
                 metrics=['accuracy'])
-    loaded_model = load_model(r'.\MNIST_model')
+    loaded_model = load_model(r'C:\Users\ETsukerman\Desktop\Dash\MNIST_model')
     return loaded_model
 
 
@@ -72,19 +72,17 @@ title = html.H1(
     )
 subtitle = html.Div(children='Click button to pick a random image from the MNIST dataset and display the deep neural network\'s prediction on that image.',
             style={'padding-bottom': 10})
-button = html.Button('Predict Random Image', id='submit-val')
-clicked = html.Div(id='container-button-basic',
-             children='',
-             style={'padding': 10})
-sample_image = html.Img(style = {'width': '400px', 'height': '400px'}, id='image')
-model_prediction = html.Div(id="pred", children=None,
-            style={'padding-bottom': 10})
+button = html.Button(children='Predict Random Image', id='submit-val')
+space = html.Br()
+sample_image = html.Img(style = {'padding': 10, 'width': '400px', 'height': '400px'}, id='image')
+model_prediction = html.Div(id="pred", children=None)
 intermediate = html.Div(id='intermediate-operation', style={'display': 'none'})
+
 app.layout = html.Div(style={'textAlign': "center"},children=[
     title,
     subtitle,
     button,
-    clicked,
+    space,
     sample_image,
     model_prediction,
     intermediate
