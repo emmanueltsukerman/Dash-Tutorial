@@ -61,7 +61,7 @@ def load_MNIST_model(model_path = "MNIST_model"):
     model.compile(loss=keras.losses.categorical_crossentropy,
                 optimizer=keras.optimizers.Adadelta(),
                 metrics=['accuracy'])
-    loaded_model = load_model(r'C:\Users\ETsukerman\Desktop\Dash\MNIST_model')
+    loaded_model = load_model(r'.\MNIST_model')
     return loaded_model
 
 
